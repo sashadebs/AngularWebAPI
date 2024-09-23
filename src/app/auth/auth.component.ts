@@ -3,8 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import * as fromApp from '../store/app.reducer';
 import * as AuthActions from './store/auth.actions';
-import { Actions, ofType } from '@ngrx/effects';
-import { Subscription } from 'rxjs';
+import { Actions } from '@ngrx/effects';
 import { AuthErrorService } from './auth-error.service';
 
 
@@ -27,11 +26,6 @@ export class AuthComponent {
         this.error = errorRes;
     })
   }
-  //isLoginMode = true;
-
-  // onSwitchMode(){
-  //   this.isLoginMode = !this.isLoginMode;
-  // }
 
   onSubmit(form: NgForm){
     this.store.dispatch(new AuthActions.LoginStart({
