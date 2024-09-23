@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-5">
+      <div 
+        class="list-group-item clearfix"
+        *ngFor="let p of people; let i=index" 
+        (click)="onNavigate(i)"
+        >
+  
+        <!-- <h3> {{people[i].id}} </h3> -->
+  
+            <div class="pull-left">
+              <h4 class="list-group-item-heading">{{ p.firstName }} {{ p.lastName }}</h4>
+            </div>
+            
+            <div class="pull-right">
+              <p class="list-group-item-text">{{ p.email ? p.email : '--'}}</p>
+            </div>
+      </div>
+    </div>
+    
+    <div class="col-md-7">
+        <router-outlet></router-outlet>
+    </div>
+  
+  </div>
+  
+  
+  
+  

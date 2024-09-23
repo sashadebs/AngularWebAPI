@@ -1,0 +1,22 @@
+
+<br>
+<div
+style="cursor: pointer;" 
+class="list-group-item clearfix" >
+
+    <div 
+        class="pull-left"
+        [routerLink]="[address.id]"
+        [routerLinkActive]="'active'">
+
+        <h4 class="list-group-item-heading">Country: {{address.country}}</h4>
+        <p class="list-group-item-heading">City: {{address.city}}</p>
+        <p class="list-group-item-heading">Street: {{address.street}}</p>
+        <p class="list-group-item-heading">Phone: {{address.phone}}</p>
+    </div>
+    <div class="pull-right"> 
+        <button class="btn btn-danger" (click)="onDeleteAddress(address.id)">X</button>
+    </div> 
+
+</div>
+

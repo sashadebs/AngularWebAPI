@@ -1,0 +1,67 @@
+
+<div class="row">
+    <div class="col-xs-6">
+        <form #addressForm="ngForm" (ngSubmit)="onSubmit()">
+
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <input 
+                        type="text"
+                        id="country"
+                        name="country"
+                        class="form-control"
+                        ngModel="{{addressCountry}}"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input 
+                        type="text"
+                        id="city"
+                        name="city"
+                        class="form-control"
+                        ngModel="{{addressCity}}"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="street">Street</label>
+                    <input 
+                        type="text"
+                        id="street"
+                        name="street"
+                        class="form-control"
+                        ngModel="{{addressStreet}}"
+                        >
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input 
+                        type="text"
+                        id="phone"
+                        name="phone"
+                        class="form-control"
+                        ngModel="{{addressPhone}}"
+                        >
+                </div>
+
+            <hr>
+            
+            <button 
+                class="btn btn-primary" 
+                type="submit"
+                [disabled]="!addressForm.valid"> 
+                {{ editMode ? 'Update' : 'Add'}}
+            </button> | 
+            <button 
+                class="btn btn-default" 
+                type="button"
+                (click)="onCancel()">
+                    Cancel
+            </button>
+
+        </form>
+
+</div>

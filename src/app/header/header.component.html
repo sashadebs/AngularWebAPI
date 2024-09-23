@@ -1,0 +1,22 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div>
+            <ul class="nav navbar-nav">
+                <li routerLinkActive="active"><a routerLink="/auth" *ngIf="!isAuthenticated">Authenticate</a></li>
+                <li routerLinkActive="active" ><a routerLink="/person" *ngIf="isAuthenticated">Person</a></li>
+                <li routerLinkActive="active"><a routerLink="/address" *ngIf="isAuthenticated"> Address</a></li>
+            </ul>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <button 
+            *ngIf="router.url == '/person' "
+                class="btn btn-primary" 
+                style="cursor: pointer;" 
+                (click)="onAdd()"
+                > 
+               Add Person
+            </button>
+        </ul>
+    </div>
+</nav>
+
